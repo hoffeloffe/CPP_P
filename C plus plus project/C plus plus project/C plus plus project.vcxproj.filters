@@ -21,9 +21,15 @@
     <ClCompile Include="masterText.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameOption.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="masterText.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOption.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
