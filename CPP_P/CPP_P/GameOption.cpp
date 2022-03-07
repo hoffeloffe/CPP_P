@@ -1,47 +1,45 @@
-#include "Input.h"
+#include "GameOption.h"
 
 
-void Input::Option()
+void GameOption::Option()
 {
 	cout << "\n" "You have following options to pick (menu/restart) \n";
 	
-	
-	getline(cin, *input);
+	string choice;
+	getline(cin, choice);
 
-	if (*input == "menu")
+	if (choice == "menu")
 	{
 		GoToMenu();
 	}
-	if (*input == "restart")
-	{
-		Restart();
-	}
-}
-
-void Input::GoToMenu()
-{
-	cout << "\n" "You have following options in menu: \n" "1. start new game \n" "2. Veiw score\n" ;
-	getline(cin, *input);
-	if (*input == "1")
+	if (choice == "restart") 
 	{
 		StartGame();
 	}
-	if (*input == "2")
+}
+
+void GameOption::GoToMenu()
+{
+	cout << "\n" "You have following options in menu: \n" "1. start new game \n" "2. Veiw score\n" ;
+	string inputs;
+	getline(cin, inputs);
+	if (inputs == "1")
+	{
+		StartGame();
+	}
+	if (inputs == "2")
 	{
 
 	}
 }
 
-void Input::Restart()
-{
-}
-
-void Input::StartGame()
+void GameOption::StartGame()
 {
 	cout << "\n" "Your game has startet \n";
-	getline(cin, *input);
+	string inputs;
+	getline(cin, inputs);
 
-	if (*input == "option")
+	if (inputs == "option")
 	{
 		Option();
 	}

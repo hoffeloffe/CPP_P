@@ -3,14 +3,13 @@
 #include <string>
 using namespace std;
 
-class Input
+class GameOption
 {
 public:
 	string* input;
 
 	void Option();
 	void GoToMenu();
-	void Restart();
 	void StartGame();
 
 };
