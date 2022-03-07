@@ -1,20 +1,59 @@
-// C plus plus project.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <windows.h>
+#include <string>
+#include "masterText.h"
+#include <vector>
+using namespace std;
 
+HANDLE color;
+string solution;
+string myGuess;
+string myGuess1;
+string myGuess2;
+string myGuess3;
+string myGuess4;
+masterText mBlue("Blue", 1);
+masterText mGreen("Green", 2);
+masterText mAqua("Aqua", 3);
+masterText mRed("Red", 4);
+masterText mPurple("Purple", 5);
+masterText mYellow("Yellow", 6);
+masterText mWhite("White", 7);
+masterText mGray("Gray", 8);
+
+vector<masterText> masterList = { mBlue, mGreen, mAqua, mRed, mPurple, mYellow, mWhite, mGray };
+
+void SetThatColor(string input)
+{
+	for (int i = 0; i < masterList.size(); i++)
+	{
+		if (masterList.at(i).name == input)
+		{
+			masterList.at(i).SetColor(color);
+		}
+	}
+}
 int main()
 {
-    std::cout << "Hello World!\n";
+	color = GetStdHandle(STD_OUTPUT_HANDLE);
+	cout << "Press enter to start game\n";
+	solution = "Red Blue Green White";
+	cout << "The solution : " + solution + "\n";
+	cout << "Write your guess here: \n";
+
+	getline(cin, myGuess1);
+	SetThatColor(myGuess1);
+	getline(cin, myGuess2);
+	SetThatColor(myGuess2);
+	getline(cin, myGuess3);
+	SetThatColor(myGuess3);
+	getline(cin, myGuess4);
+	SetThatColor(myGuess4);
+
+	myGuess = myGuess1 + " " + myGuess2 + " " + myGuess3 + " " + myGuess4;
+
+	if (myGuess == solution)
+		cout << "Your the best\n";
+	else
+		cout << "You suck \n";
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
