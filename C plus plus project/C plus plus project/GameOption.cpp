@@ -9,7 +9,7 @@ using namespace std;
 HANDLE color;
 string solution;
 string myGuess;
-string myGuess91;
+string myGuess1;
 string myGuess2;
 string myGuess3;
 string myGuess4;
@@ -95,8 +95,8 @@ void GameOption::StartGame()
 		cout << "The solution : " + solution + "\n";
 		cout << "Write your guess here: \n";
 
-		getline(cin, myGuess91);
-		SetThatColor(myGuess91);
+		getline(cin, myGuess1);
+		SetThatColor(myGuess1);
 		getline(cin, myGuess2);
 		SetThatColor(myGuess2);
 		getline(cin, myGuess3);
