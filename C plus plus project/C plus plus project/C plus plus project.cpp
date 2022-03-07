@@ -52,10 +52,8 @@ int main()
 
 	myGuess = myGuess1 + " " + myGuess2 + " " + myGuess3 + " " + myGuess4;
 
-	if (myGuess == solution) {
+	if (myGuess == solution)
 		cout << "Your the best\n";
-	}
-
 	else
 		cout << "You suck \n";
 }
