@@ -15,4 +15,5 @@ public:
 	void SetColor(HANDLE color);
 
 private:
+
 };
