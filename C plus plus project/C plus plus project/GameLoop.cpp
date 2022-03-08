@@ -15,20 +15,20 @@ string myGuess2;
 string myGuess3;
 string myGuess4;
 int guessCount = 3;
-masterText mBlue("Blue", 1);
-masterText mGreen("Green", 2);
-masterText mAqua("Aqua", 3);
-masterText mRed("Red", 4);
-masterText mPurple("Purple", 5);
-masterText mYellow("Yellow", 6);
-masterText mWhite("White", 7);
-masterText mGray("Gray", 8);
+masterText mBlue("blue", 1);
+masterText mGreen("green", 2);
+masterText mAqua("aqua", 3);
+masterText mRed("red", 4);
+masterText mPurple("purple", 5);
+masterText mYellow("yellow", 6);
+masterText mWhite("white", 7);
+masterText mGray("gray", 8);
 int white = 0;
 int black = 0;
 int tryes = 0;
 
 vector<masterText> masterList = { mBlue, mGreen, mAqua, mRed, mPurple, mYellow, mWhite, mGray };
-vector<string> solutionList = { "Red", "Blue", "Green", "Yellow" };
+vector<string> solutionList = { "red", "blue", "green", "yellow" };
 vector<string> guessList;
 
 void SetThatColor(string input)
@@ -40,6 +40,15 @@ void SetThatColor(string input)
 			masterList.at(i).SetColor(color);
 		}
 	}
+}
+
+string Lower(string input)
+{
+	for (int i = 0; i < input.size(); i++)
+	{
+		input[i] = tolower(input[i]);
+	}
+	return input;
 }
 
 GameLoop::GameLoop()
@@ -71,7 +80,7 @@ void GameLoop::EpicGameLoop()
 
 		myGuess = myGuess1 + " " + myGuess2 + " " + myGuess3 + " " + myGuess4;
 
-		guessList = { myGuess1 , myGuess2 , myGuess3, myGuess4 };
+		guessList = { Lower(myGuess1) , Lower(myGuess2) , Lower(myGuess3), Lower(myGuess4) };
 
 		cout << "\n" << "Your guess : " + myGuess + "\n";
 
@@ -97,9 +106,13 @@ void GameLoop::EpicGameLoop()
 			}
 		}
 
+
 		cout << "You got " + to_string(white) << " Whites" << "\n";
 
 		cout << "You got " + to_string(black) << " Blacks" << "\n" << "\n";
+
+		cout << "White: Right number, wrong spot\n";
+		cout << "Black: Right number, right spot\n\n";
 
 		white = 0;
 		black = 0;

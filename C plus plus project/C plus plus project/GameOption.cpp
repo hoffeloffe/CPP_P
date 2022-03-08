@@ -15,38 +15,48 @@ void GameOption::Clear()
 
 void GameOption::Option()
 {
-	cout << "You have following options to pick (menu/restart) \n";
+	cout << "You have the following options to pick (menu/restart) \n";
 	cout << "1. Menu \n";
 	cout << "2. Restart \n";
 
 	string choice;
-	getline(cin, choice);
 
-	if (choice == "1")
+	while (true)
 	{
-		GoToMenu();
+		getline(cin, choice);
+		if (choice == "1")
+		{
+			GoToMenu();
+			break;
+		}
+		else if (choice == "2")
+		{
+			Restart();
+			StartGame();
+			break;
+		}
 	}
-	if (choice == "2")
-	{
-		Restart();
-		StartGame();
-	}
+
 }
 
 void GameOption::GoToMenu()
 {
-	cout << "\n" "You have following options in menu : \n" "1. start new game \n" "2. Veiw score\n";
+	cout << "\n" "You have following options in menu : \n" "1. start new game \n" "2. View score\n";
 
 	string inputs;
-	getline(cin, inputs);
-
-	if (inputs == "1")
+	while (true)
 	{
-		StartGame();
-	}
+		getline(cin, inputs);
 
-	if (inputs == "2")
-	{
+		if (inputs == "1")
+		{
+			StartGame();
+			break;
+		}
+		else if (inputs == "2")
+		{
+			break;
+		}
 	}
 }
 
