@@ -7,9 +7,13 @@ using namespace std;
 class masterText
 {
 public:
-	masterText(string name, int colorValue);
 	string name;
 	int colorValue;
+	
+	masterText(string name, int colorValue);
+	
 	void SetColor(HANDLE color);
+
 private:
+
 };

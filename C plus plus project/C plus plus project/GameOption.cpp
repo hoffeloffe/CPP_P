@@ -62,7 +62,7 @@ void GameOption::StartGame()
 	{
 		gameloop.EpicGameLoop();
 
-		cout << "\n1. Play again?\n";
+		cout << "1. Play again?\n";
 		cout << "2. Got to menu\n";
 		cout << "3. Got to option\n";
 

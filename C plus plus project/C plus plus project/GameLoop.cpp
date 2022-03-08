@@ -14,6 +14,7 @@ string myGuess1;
 string myGuess2;
 string myGuess3;
 string myGuess4;
+int guessCount = 3;
 masterText mBlue("Blue", 1);
 masterText mGreen("Green", 2);
 masterText mAqua("Aqua", 3);
@@ -111,7 +112,7 @@ void GameLoop::EpicGameLoop()
 
 	if (myGuess == solution) {
 		cout << "Your the best\n";
-		cout << "With " << tryes << " tryes" "\n";
+		cout << "With " << tryes << " tryes" "\n" "\n";
 	}
 	else
 		cout << "You suck \n";
