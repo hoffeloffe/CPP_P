@@ -1,5 +1,4 @@
 #include "GameLoop.h"
-
 #include "GameOption.h"
 #include <string>
 #include <iostream>
@@ -23,8 +22,13 @@ masterText mPurple("Purple", 5);
 masterText mYellow("Yellow", 6);
 masterText mWhite("White", 7);
 masterText mGray("Gray", 8);
+int white = 0;
+int black = 0;
+int tryes = 0;
 
 vector<masterText> masterList = { mBlue, mGreen, mAqua, mRed, mPurple, mYellow, mWhite, mGray };
+vector<string> solutionList = { "Red", "Blue", "Green", "Yellow" };
+vector<string> guessList;
 
 void SetThatColor(string input)
 {
@@ -45,24 +49,73 @@ void GameLoop::EpicGameLoop()
 {
 	color = GetStdHandle(STD_OUTPUT_HANDLE);
 	cout << "\n" "Your game has startet \n";
+	bool playing = true;
 
-	solution = "Red Blue Green White";
+	solution = "Red Blue Green Yellow";
 	cout << "The solution : " + solution + "\n";
 	cout << "Write your guess here: \n";
 
-	getline(cin, myGuess1);
-	SetThatColor(myGuess1);
-	getline(cin, myGuess2);
-	SetThatColor(myGuess2);
-	getline(cin, myGuess3);
-	SetThatColor(myGuess3);
-	getline(cin, myGuess4);
-	SetThatColor(myGuess4);
+	while (playing)
+	{
+		tryes++;
 
-	myGuess = myGuess1 + " " + myGuess2 + " " + myGuess3 + " " + myGuess4;
+		getline(cin, myGuess1);
+		SetThatColor(myGuess1);
+		getline(cin, myGuess2);
+		SetThatColor(myGuess2);
+		getline(cin, myGuess3);
+		SetThatColor(myGuess3);
+		getline(cin, myGuess4);
+		SetThatColor(myGuess4);
 
-	if (myGuess == solution)
+		myGuess = myGuess1 + " " + myGuess2 + " " + myGuess3 + " " + myGuess4;
+
+		guessList = { myGuess1 , myGuess2 , myGuess3, myGuess4 };
+
+		cout << "\n" << "Your guess : " + myGuess + "\n";
+
+		//Guess the right number but not on the place.
+		for (int i = 0; i < solutionList.size(); i++)
+		{
+			for (int j = 0; j < guessList.size(); j++)
+			{
+				if (solutionList.at(j) == guessList.at(i))
+				{
+					white++;
+				}
+			}
+		}
+
+		//Guess the right number on the place.
+		for (int i = 0; i < guessList.size(); i++)
+		{
+			if (solutionList.at(i) == guessList.at(i))
+			{
+				black++;
+				white--;
+			}
+		}
+
+		cout << "You got " + to_string(white) << " Whites" << "\n";
+
+		cout << "You got " + to_string(black) << " Blacks" << "\n" << "\n";
+
+		white = 0;
+		black = 0;
+
+		if (myGuess == solution)
+		{
+			playing = false;
+		}
+	}
+
+	if (myGuess == solution) {
 		cout << "Your the best\n";
+		cout << "With " << tryes << " tryes" "\n";
+	}
 	else
 		cout << "You suck \n";
+
+	white = 0;
+	black = 0;
 }

@@ -16,15 +16,17 @@ void GameOption::Clear()
 void GameOption::Option()
 {
 	cout << "You have following options to pick (menu/restart) \n";
+	cout << "1. Menu \n";
+	cout << "2. Restart \n";
 
 	string choice;
 	getline(cin, choice);
 
-	if (choice == "menu")
+	if (choice == "1")
 	{
 		GoToMenu();
 	}
-	if (choice == "restart")
+	if (choice == "2")
 	{
 		Restart();
 		StartGame();
@@ -33,7 +35,7 @@ void GameOption::Option()
 
 void GameOption::GoToMenu()
 {
-	cout << "You have following options in menu: \n" "1. start new game \n" "2. Veiw score\n";
+	cout << "\n" "You have following options in menu : \n" "1. start new game \n" "2. Veiw score\n";
 
 	string inputs;
 	getline(cin, inputs);
@@ -59,10 +61,10 @@ void GameOption::StartGame()
 	while (playing)
 	{
 		gameloop.EpicGameLoop();
-		cout << "1. Play again?\n";
+
+		cout << "\n1. Play again?\n";
 		cout << "2. Got to menu\n";
 		cout << "3. Got to option\n";
-		cout << "4. Clear console\n";
 
 		string inputs;
 		getline(cin, inputs);
