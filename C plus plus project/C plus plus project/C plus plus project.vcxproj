@@ -142,12 +142,16 @@
     <ClCompile Include="C plus plus project.cpp" />
     <ClCompile Include="GameLoop.cpp" />
     <ClCompile Include="GameOption.cpp" />
+    <ClCompile Include="Highscore.cpp" />
     <ClCompile Include="masterText.cpp" />
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameLoop.h" />
     <ClInclude Include="GameOption.h" />
+    <ClInclude Include="Highscore.h" />
     <ClInclude Include="masterText.h" />
+    <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

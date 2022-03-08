@@ -2,6 +2,7 @@
 #include <string>
 #include <iostream>
 #include "GameLoop.h"
+#include "Highscore.h"
 using namespace std;
 
 GameOption::GameOption()
@@ -35,7 +36,7 @@ void GameOption::Option()
 
 void GameOption::GoToMenu()
 {
-	cout << "\n" "You have following options in menu : \n" "1. start new game \n" "2. Veiw score\n";
+	cout << "\n" "You have following options in menu : \n" "1. start new game \n" "2. Veiw Highscore\n";
 
 	string inputs;
 	getline(cin, inputs);
@@ -47,8 +48,16 @@ void GameOption::GoToMenu()
 
 	if (inputs == "2")
 	{
+		ViewScore();
 	}
 }
+
+void GameOption::ViewScore()
+{
+	this->score.PrintScore();
+}
+
+
 
 void GameOption::Restart()
 {
