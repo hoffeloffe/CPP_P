@@ -33,7 +33,7 @@ vector<string> guessList;
 
 void SetThatColor(string input)
 {
-	for (int i = 0; i < masterList.size(); i++)
+	for (unsigned int i = 0; i < masterList.size(); i++)
 	{
 		if (masterList.at(i).name == input)
 		{
@@ -44,7 +44,7 @@ void SetThatColor(string input)
 
 string Lower(string input)
 {
-	for (int i = 0; i < input.size(); i++)
+	for (unsigned int i = 0; i < input.size(); i++)
 	{
 		input[i] = tolower(input[i]);
 	}
@@ -85,9 +85,9 @@ void GameLoop::EpicGameLoop()
 		cout << "\n" << "Your guess : " + myGuess + "\n";
 
 		//Guess the right number but not on the place.
-		for (int i = 0; i < solutionList.size(); i++)
+		for (unsigned int i = 0; i < solutionList.size(); i++)
 		{
-			for (int j = 0; j < guessList.size(); j++)
+			for (unsigned int j = 0; j < guessList.size(); j++)
 			{
 				if (solutionList.at(j) == guessList.at(i))
 				{
@@ -97,7 +97,7 @@ void GameLoop::EpicGameLoop()
 		}
 
 		//Guess the right number on the place.
-		for (int i = 0; i < guessList.size(); i++)
+		for (unsigned int i = 0; i < guessList.size(); i++)
 		{
 			if (solutionList.at(i) == guessList.at(i))
 			{
