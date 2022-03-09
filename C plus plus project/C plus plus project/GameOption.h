@@ -10,6 +10,7 @@ public:
 
 	GameOption();
 
+	void EnterName();
 	void Option();
 	void GoToMenu();
 	void ViewScore();

@@ -3,5 +3,5 @@
 int main()
 {
 	GameOption gameoption;
-	gameoption.Option();
+	gameoption.EnterName();
 }

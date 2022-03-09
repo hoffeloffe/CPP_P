@@ -7,11 +7,22 @@ using namespace std;
 
 GameOption::GameOption()
 {
+
 }
 
 void GameOption::Clear()
 {
 	system("CLS");
+}
+
+
+void GameOption::EnterName()
+{
+	string enteredName;
+	cout << "Enter name \n";
+	getline(cin, enteredName);
+	score.AddPlayer(enteredName, 0);
+	Option();
 }
 
 void GameOption::Option()
@@ -37,7 +48,6 @@ void GameOption::Option()
 			break;
 		}
 	}
-
 }
 
 void GameOption::GoToMenu()
