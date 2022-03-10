@@ -12,12 +12,17 @@ private:
 
 public:
 	vector<Player*> players;
-	Player player;
+	vector<Player*>::iterator it;
 
 	//Constructor
 	Highscore();
 
+	//Deconstructor
+	~Highscore();
+
 	//Function
+	void AddPlayer(string name, int score);
 	void PrintScore();
+
 };
 

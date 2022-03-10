@@ -14,18 +14,31 @@ Highscore::Highscore()
 	players.push_back(new Player("Kena", 394));
 }
 
+Highscore::~Highscore()
+{
+	for (it = players.begin(); it < players.end(); it++)
+	{
+		delete (*it)->name;
+		delete (*it)->score;
+	}
+}
+
+void Highscore::AddPlayer(string name, int score)
+{
+	players.push_back(new Player(name, score));
+}
+
 void Highscore::PrintScore()
 {
-
-	vector<Player*>::iterator it;
-
 	for (it = players.begin(); it < players.end(); it++)
 	{
 		cout << "\n" << *(*it)->name;
 		cout << "\n" << *(*it)->score << "\n";
 	}
-
 }
+
+
+
 
 //Player* playersPtr = players.data();
 

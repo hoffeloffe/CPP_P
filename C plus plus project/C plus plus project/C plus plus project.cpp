@@ -11,7 +11,7 @@ int main()
 	engine->setSoundVolume(0.1f);
 
 	GameOption gameoption;
-	gameoption.Option();
+	gameoption.EnterName();
 	engine->drop();
 	return 0;
 }

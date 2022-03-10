@@ -8,7 +8,12 @@ public:
 	string *name;
 	int* score;
 
+	//constructor
 	Player();
+	Player(string name);
 	Player(string name, int score);
+
+	//deconstructor
+	~Player();
 };
 
