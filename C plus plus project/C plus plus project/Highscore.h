@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include "Player.h"
+#include "PlayerPremium.h"
 
 
 using namespace std;
@@ -11,8 +12,7 @@ private:
 	
 
 public:
-	vector<Player*> players;
-	vector<Player*>::iterator it;
+	Player p;
 
 	//Constructor
 	Highscore();
@@ -21,7 +21,7 @@ public:
 	~Highscore();
 
 	//Function
-	void AddPlayer(string name, int score);
+	void AddPlayer(string name, string accountType, int score, int points);
 	void PrintScore();
 
 };

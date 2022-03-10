@@ -145,6 +145,8 @@
     <ClCompile Include="Highscore.cpp" />
     <ClCompile Include="masterText.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerPremium.cpp" />
+    <ClCompile Include="PlayerStandard.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameLoop.h" />
@@ -152,6 +154,8 @@
     <ClInclude Include="Highscore.h" />
     <ClInclude Include="masterText.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerPremium.h" />
+    <ClInclude Include="PlayerStandard.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

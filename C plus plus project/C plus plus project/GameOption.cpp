@@ -7,7 +7,6 @@ using namespace std;
 
 GameOption::GameOption()
 {
-
 }
 
 void GameOption::Clear()
@@ -19,15 +18,21 @@ void GameOption::Clear()
 void GameOption::EnterName()
 {
 	string enteredName;
+	string enteredAccType;
+	
 	cout << "Enter name \n";
 	getline(cin, enteredName);
-	score.AddPlayer(enteredName, 0);
-	Option();
+	
+	cout << "Enter account type \n";
+	getline(cin, enteredAccType);
+
+	p.RegisterPlayer(enteredName, enteredAccType, 0, 0);
+	GoToMenu();
 }
 
 void GameOption::Option()
 {
-	cout << "You have the following options to pick (menu/restart) \n";
+	cout << "\nYou have the following options to pick (menu/restart) \n";
 	cout << "1. Menu \n";
 	cout << "2. Restart \n";
 
@@ -52,7 +57,7 @@ void GameOption::Option()
 
 void GameOption::GoToMenu()
 {
-	cout << "\n" "You have following options in menu : \n" "1. start new game \n" "2. Veiw Highscore\n";
+	cout << "\n" "You have following options in menu : \n" "1. start new game \n" "2. Veiw Highscore\n" "3. Veiw PlayerInfo\n";
 
 	string inputs;
 	while (true)
@@ -70,12 +75,29 @@ void GameOption::GoToMenu()
 			ViewScore();
 			break;
 		}
+		else if (inputs == "3")
+		{
+			this->p.PrintPlayerInfo();
+			cout << "\nClaim reward? (y/n)\n";
+
+			getline(cin, inputs);
+			if (inputs == "y")
+			{
+				this->pp.ClaimReward();
+			}
+			else
+			{
+				Option();
+			}
+			break;
+		}
 	}
 }
 
 void GameOption::ViewScore()
 {
 	this->score.PrintScore();
+	Option();
 }
 
 

@@ -3,37 +3,46 @@
 #include <string>
 #include "Highscore.h"
 #include "Player.h"
+#include "PlayerPremium.h"
+#include "PlayerStandard.h"
 
 
 using namespace std;
 
 Highscore::Highscore()
 {
-	players.push_back(new Player("Tai", 444));
-	players.push_back(new Player("???", 999));
-	players.push_back(new Player("Kena", 394));
+	p.players.push_back(new Player("Tai","Premium", 444, 0));
+	p.players.push_back(new Player("???", "Premium", 999, 0));
+	p.players.push_back(new Player("Kena", "Standard", 394, 0));
 }
 
 Highscore::~Highscore()
 {
-	for (it = players.begin(); it < players.end(); it++)
+	for (p.it = p.players.begin(); p.it < p.players.end(); p.it++)
 	{
-		delete (*it)->name;
-		delete (*it)->score;
+		delete (*p.it)->name;
+		delete (*p.it)->accountType;
+		delete (*p.it)->score;
 	}
 }
 
-void Highscore::AddPlayer(string name, int score)
+void Highscore::AddPlayer(string name, string accountType, int score, int points)
 {
-	players.push_back(new Player(name, score));
+	p.players.push_back(new Player(name, accountType, score, 0));
 }
 
 void Highscore::PrintScore()
 {
-	for (it = players.begin(); it < players.end(); it++)
+	//for (p.itPP = p.playersPremium.begin(); p.itPP < p.playersPremium.end(); p.itPP++)
+	//{
+	//	cout << "\n" << *(*p.itPP)->name;
+	//	cout << "\n" << *(*p.itPP)->score << "\n";
+	//}
+
+	for (p.it = p.players.begin(); p.it < p.players.end(); p.it++)
 	{
-		cout << "\n" << *(*it)->name;
-		cout << "\n" << *(*it)->score << "\n";
+		cout << "\n" << *(*p.it)->name;
+		cout << "\n" << *(*p.it)->score << "\n";
 	}
 }
 
