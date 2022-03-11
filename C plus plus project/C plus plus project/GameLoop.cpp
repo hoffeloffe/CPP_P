@@ -25,22 +25,11 @@ masterText mWhite("white", 7);
 masterText mGray("gray", 8);
 int white = 0;
 int black = 0;
-int tryes = 0;
+int tries = 0;
 
 vector<masterText> masterList = { mBlue, mGreen, mAqua, mRed, mPurple, mYellow, mWhite, mGray };
 vector<string> solutionList = { "red", "blue", "green", "yellow" };
 vector<string> guessList;
-
-void SetThatColor(string input)
-{
-	for (unsigned int i = 0; i < masterList.size(); i++)
-	{
-		if (masterList.at(i).name == input)
-		{
-			masterList.at(i).SetColor(color);
-		}
-	}
-}
 
 string Lower(string input)
 {
@@ -51,6 +40,18 @@ string Lower(string input)
 	return input;
 }
 
+void SetThatColor(string input)
+{
+	input = Lower(input);
+	for (unsigned int i = 0; i < masterList.size(); i++)
+	{
+		if (masterList.at(i).name == input)
+		{
+			masterList.at(i).SetColor(color);
+		}
+	}
+}
+
 GameLoop::GameLoop()
 {
 }
@@ -58,16 +59,16 @@ GameLoop::GameLoop()
 void GameLoop::EpicGameLoop()
 {
 	color = GetStdHandle(STD_OUTPUT_HANDLE);
-	cout << "\n" "Your game has startet \n";
+	cout << "\n" "Your game has startet.\n";
 	bool playing = true;
 
-	solution = "Red Blue Green Yellow";
-	cout << "The solution : " + solution + "\n";
+	solution = "red blue green yellow";
+	cout << "The solution: " + solution + ".\n";
 	cout << "Write your guess here: \n";
 
 	while (playing)
 	{
-		tryes++;
+		tries++;
 
 		getline(cin, myGuess1);
 		SetThatColor(myGuess1);
@@ -78,11 +79,11 @@ void GameLoop::EpicGameLoop()
 		getline(cin, myGuess4);
 		SetThatColor(myGuess4);
 
-		myGuess = myGuess1 + " " + myGuess2 + " " + myGuess3 + " " + myGuess4;
+		myGuess = Lower(myGuess1) + " " + Lower(myGuess2) + " " + Lower(myGuess3) + " " + Lower(myGuess4);
 
 		guessList = { Lower(myGuess1) , Lower(myGuess2) , Lower(myGuess3), Lower(myGuess4) };
 
-		cout << "\n" << "Your guess : " + myGuess + "\n";
+		cout << "\n" << "Your guess: " + myGuess + ".\n";
 
 		//Guess the right number but not on the place.
 		for (unsigned int i = 0; i < solutionList.size(); i++)
@@ -107,12 +108,12 @@ void GameLoop::EpicGameLoop()
 		}
 
 
-		cout << "You got " + to_string(white) << " Whites" << "\n";
+		cout << "You got " + to_string(white) << " Whites." << "\n";
 
-		cout << "You got " + to_string(black) << " Blacks" << "\n" << "\n";
+		cout << "You got " + to_string(black) << " Blacks." << "\n" << "\n";
 
-		cout << "White: Right number, wrong spot\n";
-		cout << "Black: Right number, right spot\n\n";
+		cout << "White: Right number, wrong spot.\n";
+		cout << "Black: Right number, right spot.\n\n";
 
 		white = 0;
 		black = 0;
@@ -124,11 +125,11 @@ void GameLoop::EpicGameLoop()
 	}
 
 	if (myGuess == solution) {
-		cout << "Your the best\n";
-		cout << "With " << tryes << " tryes" "\n" "\n";
+		cout << "You're the best!\n";
+		cout << "With " << tries << " tries.\n\n";
 	}
 	else
-		cout << "You suck \n";
+		cout << "You suck.\n";
 
 	white = 0;
 	black = 0;
