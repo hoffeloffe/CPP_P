@@ -14,14 +14,15 @@ void GameOption::Clear()
 	system("CLS");
 }
 
+
 void GameOption::EnterName()
 {
 	string enteredName;
 	string enteredAccType;
-
+	
 	cout << "Enter name \n";
 	getline(cin, enteredName);
-
+	
 	cout << "Enter account type \n";
 	getline(cin, enteredAccType);
 
@@ -63,6 +64,7 @@ void GameOption::GoToMenu()
 	{
 		getline(cin, inputs);
 
+
 		if (inputs == "1")
 		{
 			StartGame();
@@ -97,6 +99,8 @@ void GameOption::ViewScore()
 	this->score.PrintScore();
 	Option();
 }
+
+
 
 void GameOption::Restart()
 {
