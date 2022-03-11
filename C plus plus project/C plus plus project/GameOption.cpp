@@ -23,7 +23,7 @@ void GameOption::EnterName()
 	cout << "Enter name \n";
 	getline(cin, enteredName);
 	
-	cout << "Enter account type \n";
+	cout << "Enter account type. Possible types: Premium, standard.\n";
 	getline(cin, enteredAccType);
 
 	p.RegisterPlayer(enteredName, enteredAccType, 0, 0);
@@ -32,9 +32,9 @@ void GameOption::EnterName()
 
 void GameOption::Option()
 {
-	cout << "\nYou have the following options to pick (menu/restart) \n";
-	cout << "1. Menu \n";
-	cout << "2. Restart \n";
+	cout << "\nYou have the following options to pick (menu/restart).\n";
+	cout << "1. Menu.\n";
+	cout << "2. Restart.\n";
 
 	string choice;
 
@@ -57,7 +57,7 @@ void GameOption::Option()
 
 void GameOption::GoToMenu()
 {
-	cout << "\n" "You have following options in menu : \n" "1. start new game \n" "2. Veiw Highscore\n" "3. Veiw PlayerInfo\n";
+	cout << "\n" "You have following options in the menu: \n" "1. start new game.\n" "2. View Highscore.\n" "3. View PlayerInfo.\n";
 
 	string inputs;
 	while (true)
@@ -115,8 +115,8 @@ void GameOption::StartGame()
 		gameloop.EpicGameLoop();
 
 		cout << "1. Play again?\n";
-		cout << "2. Got to menu\n";
-		cout << "3. Got to option\n";
+		cout << "2. Menu\n";
+		cout << "3. Options\n";
 
 		string inputs;
 		getline(cin, inputs);
