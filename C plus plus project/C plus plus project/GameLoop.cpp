@@ -61,7 +61,7 @@ void GameLoop::EpicGameLoop()
 	cout << "\n" "Your game has startet \n";
 	bool playing = true;
 
-	solution = "Red Blue Green Yellow";
+	solution = "red blue green yellow";
 	cout << "The solution : " + solution + "\n";
 	cout << "Write your guess here: \n";
 
@@ -105,7 +105,6 @@ void GameLoop::EpicGameLoop()
 				white--;
 			}
 		}
-
 
 		cout << "You got " + to_string(white) << " Whites" << "\n";
 
