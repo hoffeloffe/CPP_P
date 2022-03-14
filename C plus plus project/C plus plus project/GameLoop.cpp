@@ -40,13 +40,18 @@ string Lower(string input)
 	return input;
 }
 
+//The funtion takes a string and if the string value is the same as a color value it sets the color of the text.
 void SetThatColor(string input)
 {
+	//Sets the input to lower
 	input = Lower(input);
+	//Run for loop
 	for (unsigned int i = 0; i < masterList.size(); i++)
 	{
+		//If the forloop is the same as the input
 		if (masterList.at(i).name == input)
 		{
+			//Set the color
 			masterList.at(i).SetColor(color);
 		}
 	}
@@ -58,7 +63,9 @@ GameLoop::GameLoop()
 
 void GameLoop::EpicGameLoop()
 {
+	//Color construktor (Needed to set the color)
 	color = GetStdHandle(STD_OUTPUT_HANDLE);
+
 	cout << "\n" "Your game has startet.\n";
 	bool playing = true;
 
@@ -69,7 +76,7 @@ void GameLoop::EpicGameLoop()
 	while (playing)
 	{
 		tries++;
-
+		//Set input values
 		getline(cin, myGuess1);
 		SetThatColor(myGuess1);
 		getline(cin, myGuess2);
@@ -106,7 +113,6 @@ void GameLoop::EpicGameLoop()
 				white--;
 			}
 		}
-
 
 		cout << "You got " + to_string(white) << " Whites." << "\n";
 
