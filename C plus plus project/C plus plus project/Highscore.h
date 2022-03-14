@@ -14,14 +14,12 @@ private:
 public:
 	Player p;
 
+
 	//Constructor
 	Highscore();
 
-	//Deconstructor
-	~Highscore();
 
 	//Function
-	void AddPlayer(string name, string accountType, int score, int points);
 	void PrintScore();
 
 };

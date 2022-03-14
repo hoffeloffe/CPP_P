@@ -12,7 +12,7 @@ public:
 	string *accountType;
 	int* score;
 	int* points;
-	Player* pInfo;
+	Player *pInfo;
 
 	vector<Player*> players;
 	vector<Player*>::iterator it;
@@ -25,6 +25,7 @@ public:
 	~Player();
 
 	void PrintPlayerInfo();
-	void RegisterPlayer(string name, string accountType, int score, int points);
+	void RegisterPlayer(string name, string accountType);
+	virtual int ClaimDaily();
 };
 

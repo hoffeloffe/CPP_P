@@ -11,25 +11,9 @@ using namespace std;
 
 Highscore::Highscore()
 {
-	p.players.push_back(new Player("Tai","Premium", 444, 0));
-	p.players.push_back(new Player("???", "Premium", 999, 0));
-	p.players.push_back(new Player("Kena", "Standard", 394, 0));
+
 }
 
-Highscore::~Highscore()
-{
-	for (p.it = p.players.begin(); p.it < p.players.end(); p.it++)
-	{
-		delete (*p.it)->name;
-		delete (*p.it)->accountType;
-		delete (*p.it)->score;
-	}
-}
-
-void Highscore::AddPlayer(string name, string accountType, int score, int points)
-{
-	p.players.push_back(new Player(name, accountType, score, 0));
-}
 
 void Highscore::PrintScore()
 {
@@ -38,11 +22,10 @@ void Highscore::PrintScore()
 	//	cout << "\n" << *(*p.itPP)->name;
 	//	cout << "\n" << *(*p.itPP)->score << "\n";
 	//}
-
-	for (p.it = p.players.begin(); p.it < p.players.end(); p.it++)
+	for (this->p.it = this->p.players.begin(); this->p.it < this->p.players.end(); this->p.it++)
 	{
-		cout << "\n" << *(*p.it)->name;
-		cout << "\n" << *(*p.it)->score << "\n";
+		cout << "\n" << *(*this->p.it)->name;
+		cout << "\n" << *(*this->p.it)->score << "\n";
 	}
 }
 

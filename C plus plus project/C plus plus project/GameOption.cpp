@@ -26,7 +26,8 @@ void GameOption::EnterName()
 	cout << "Enter account type. Possible types: Premium, standard.\n";
 	getline(cin, enteredAccType);
 
-	p.RegisterPlayer(enteredName, enteredAccType, 0, 0);
+	score.p.RegisterPlayer(enteredName, enteredAccType);
+
 	GoToMenu();
 }
 
@@ -77,13 +78,13 @@ void GameOption::GoToMenu()
 		}
 		else if (inputs == "3")
 		{
-			this->p.PrintPlayerInfo();
+			score.p.PrintPlayerInfo();
 			cout << "\nClaim reward? (y/n)\n";
 
 			getline(cin, inputs);
 			if (inputs == "y")
 			{
-				this->pp.ClaimReward();
+				
 			}
 			else
 			{

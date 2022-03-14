@@ -8,8 +8,6 @@ class GameOption
 {
 public:
 	string input;
-	Player p;
-	PlayerPremium pp;
 	Highscore score;
 
 	GameOption();

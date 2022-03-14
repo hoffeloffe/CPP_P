@@ -14,9 +14,11 @@ PlayerPremium::PlayerPremium(string name, string accountType, int score, int poi
 	this->points = new int(points);
 }
 
-void PlayerPremium::ClaimReward()
+int PlayerPremium::ClaimDaily()
 {
-	cout << "\nWork in progress\n";
+	ClaimDaily();
+	return *points += 300;
 }
+
 
 
