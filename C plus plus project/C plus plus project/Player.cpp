@@ -49,10 +49,11 @@ void Player::RegisterPlayer(string name, string accountType)
 	
 }
 
+//Function der tilføjer points til spilleren
 void Player::ClaimDaily()
 {
+	//Kalder Claim function fra PlayerPremium
 	PlayerPremium::ClaimDaily();
-	//string a = pInfo->name;
 	*pInfo->points += 300;
 }
 

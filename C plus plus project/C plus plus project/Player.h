@@ -25,6 +25,7 @@ public:
 	//deconstructor
 	~Player();
 
+	//Function
 	void PrintPlayerInfo();
 	void RegisterPlayer(string name, string accountType);
 	void ClaimDaily();

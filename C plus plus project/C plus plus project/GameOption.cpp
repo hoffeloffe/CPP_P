@@ -14,7 +14,7 @@ void GameOption::Clear()
 	system("CLS");
 }
 
-
+//Registere spilleren navn og hans konto type
 void GameOption::EnterName()
 {
 	string enteredName;
@@ -30,6 +30,7 @@ void GameOption::EnterName()
 	Clear();
 	GoToMenu();
 }
+
 
 void GameOption::Option()
 {
@@ -56,6 +57,7 @@ void GameOption::Option()
 		}
 	}
 }
+
 
 void GameOption::GoToMenu()
 {

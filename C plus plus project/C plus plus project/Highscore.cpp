@@ -11,7 +11,7 @@ Highscore::Highscore()
 
 }
 
-
+//Funtion til at printe tilføje spiller i vector listen
 void Highscore::PrintScore()
 {
 	for (p.it = p.players.begin(); p.it < p.players.end(); p.it++)
@@ -21,16 +21,3 @@ void Highscore::PrintScore()
 	}
 }
 
-
-
-
-//Player* playersPtr = players.data();
-
-//players.push_back(new Player("Tai", 445));
-//players.push_back(new Player("???", 999));
-
-//for (int i = 0; i < players.size(); i++)
-//{
-//	cout << "\n" << *playersPtr->name;
-//	cout << "\n" << *playersPtr->score << "\n";
-//}
