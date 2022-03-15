@@ -2,7 +2,6 @@
 #include <string>
 #include <vector>
 #include "Player.h"
-#include "PlayerPremium.h"
 
 
 using namespace std;
@@ -13,8 +12,7 @@ private:
 
 public:
 	Player p;
-
-
+	
 	//Constructor
 	Highscore();
 

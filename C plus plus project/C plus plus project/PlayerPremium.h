@@ -1,15 +1,13 @@
 #pragma once
 #include <string>
-#include "Player.h"
 
 using namespace std;
 
-class PlayerPremium : Player
+class PlayerPremium 
 {
 public:
 	PlayerPremium();
-	PlayerPremium(string name, string accountType, int score, int points);
 
-	int ClaimDaily();
+	virtual void ClaimDaily();
 };
 

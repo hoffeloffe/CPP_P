@@ -27,7 +27,7 @@ void GameOption::EnterName()
 	getline(cin, enteredAccType);
 
 	score.p.RegisterPlayer(enteredName, enteredAccType);
-
+	Clear();
 	GoToMenu();
 }
 
@@ -44,6 +44,7 @@ void GameOption::Option()
 		getline(cin, choice);
 		if (choice == "1")
 		{
+			
 			GoToMenu();
 			break;
 		}
@@ -58,6 +59,7 @@ void GameOption::Option()
 
 void GameOption::GoToMenu()
 {
+	Clear();
 	cout << "\n" "You have following options in the menu: \n" "1. start new game.\n" "2. View Highscore.\n" "3. View PlayerInfo.\n";
 
 	string inputs;
@@ -78,13 +80,18 @@ void GameOption::GoToMenu()
 		}
 		else if (inputs == "3")
 		{
+			Clear();
 			score.p.PrintPlayerInfo();
 			cout << "\nClaim reward? (y/n)\n";
 
 			getline(cin, inputs);
 			if (inputs == "y")
 			{
-				
+				score.p.ClaimDaily();
+				Clear();
+				score.p.PrintPlayerInfo();
+				Option();
+				inputs == "";
 			}
 			else
 			{
@@ -97,6 +104,7 @@ void GameOption::GoToMenu()
 
 void GameOption::ViewScore()
 {
+	Clear();
 	this->score.PrintScore();
 	Option();
 }
@@ -109,6 +117,7 @@ void GameOption::Restart()
 
 void GameOption::StartGame()
 {
+	Clear();
 	bool playing = true;
 	GameLoop gameloop;
 	while (playing)

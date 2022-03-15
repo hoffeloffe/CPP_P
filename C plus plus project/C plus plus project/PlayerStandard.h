@@ -1,11 +1,12 @@
 #pragma once
 #include "Player.h"
 
-class PlayerStandard : Player
+class PlayerStandard
 {
 public:
 
-	PlayerStandard(string name, string accountType, int score, int points);
-
+	PlayerStandard();
+	
+	void WatchAd();
 };
 

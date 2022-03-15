@@ -6,18 +6,10 @@ PlayerPremium::PlayerPremium()
 {
 }
 
-PlayerPremium::PlayerPremium(string name, string accountType, int score, int points) : Player(name, accountType, score, points)
-{
-	this->name = new string(name);
-	this->accountType = new string(accountType);
-	this->score = new int(score);
-	this->points = new int(points);
-}
 
-int PlayerPremium::ClaimDaily()
+void  PlayerPremium::ClaimDaily()
 {
-	ClaimDaily();
-	return *points += 300;
+	cout << "\nyou have claimed your daily premium reward\n";
 }
 
 

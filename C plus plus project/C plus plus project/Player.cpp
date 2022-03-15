@@ -5,11 +5,10 @@ using namespace std;
 
 Player::Player() 
 {
-	players.push_back(new Player("Tai", "Premium", 444, 0));
+	players.push_back(new Player("Death", "Premium", 444, 0));
 	players.push_back(new Player("???", "Premium", 999, 0));
 	players.push_back(new Player("Kena", "Standard", 394, 0));
 }
-
 
 Player::Player(string name, string accountType, int score, int points)
 {
@@ -25,6 +24,7 @@ Player::~Player()
 	delete accountType;
 	delete score;
 	delete points;
+	delete pInfo;
 }
 
 void Player::PrintPlayerInfo()
@@ -49,7 +49,14 @@ void Player::RegisterPlayer(string name, string accountType)
 	
 }
 
-int Player::ClaimDaily()
+void Player::ClaimDaily()
 {
-	return *points += 200;
+	PlayerPremium::ClaimDaily();
+	//string a = pInfo->name;
+	*pInfo->points += 300;
 }
+
+
+
+
+

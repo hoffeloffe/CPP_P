@@ -1,19 +1,20 @@
 #pragma once
 #include <string>
 #include <vector>
+#include "PlayerPremium.h"
+
 
 using namespace std;
 
-class Player
+class Player : virtual public PlayerPremium
 {
-
 public:
 	string *name;
 	string *accountType;
 	int* score;
 	int* points;
-	Player *pInfo;
 
+	Player* pInfo;
 	vector<Player*> players;
 	vector<Player*>::iterator it;
 
@@ -26,6 +27,6 @@ public:
 
 	void PrintPlayerInfo();
 	void RegisterPlayer(string name, string accountType);
-	virtual int ClaimDaily();
+	void ClaimDaily();
 };
 
