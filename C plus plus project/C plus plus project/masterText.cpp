@@ -9,5 +9,6 @@ masterText::masterText(string name, int colorValue)
 
 void masterText::SetColor(HANDLE color)
 {
+	//Sets the color of the console.
 	SetConsoleTextAttribute(color, colorValue);
 }
